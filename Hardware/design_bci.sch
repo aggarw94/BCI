@@ -1639,6 +1639,9 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <part name="B2" library="LinnesLab-Microcontrollers" deviceset="ARDUINO_UNO_R3_SHIELD_ICSP" device=""/>
 <part name="GND6" library="LinnesLab-Symbols" deviceset="GND" device=""/>
 <part name="GND7" library="LinnesLab-Symbols" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="LinnesLab-Symbols" deviceset="3.3V" device=""/>
+<part name="C4" library="LinnesLab-Passives" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:15661989/2"/>
+<part name="GND8" library="LinnesLab-Symbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1721,15 +1724,25 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <attribute name="NAME" x="-12.7" y="94.488" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-12.7" y="81.28" size="1.778" layer="96"/>
 </instance>
-<instance part="B2" gate="G$1" x="99.06" y="35.56" smashed="yes">
-<attribute name="NAME" x="89.408" y="66.802" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="88.9" y="4.826" size="1.778" layer="96" font="vector" align="top-left"/>
+<instance part="B2" gate="G$1" x="121.92" y="71.12" smashed="yes">
+<attribute name="NAME" x="112.268" y="102.362" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="111.76" y="40.386" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="GND6" gate="G$1" x="-2.54" y="76.2" smashed="yes">
 <attribute name="VALUE" x="-2.54" y="75.946" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="GND7" gate="G$1" x="2.54" y="78.74" smashed="yes">
 <attribute name="VALUE" x="2.54" y="78.486" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="SUPPLY4" gate="G$1" x="106.68" y="71.12" smashed="yes">
+<attribute name="VALUE" x="106.68" y="73.914" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="C4" gate="G$1" x="88.9" y="124.46" smashed="yes" rot="R90">
+<attribute name="NAME" x="85.979" y="125.984" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="91.059" y="125.984" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND8" gate="G$1" x="106.68" y="38.1" smashed="yes">
+<attribute name="VALUE" x="106.68" y="37.846" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -1798,6 +1811,20 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <wire x1="2.54" y1="81.28" x2="2.54" y2="78.74" width="0.1524" layer="91"/>
 <junction x="2.54" y="81.28"/>
 </segment>
+<segment>
+<pinref part="B2" gate="G$1" pin="GND@2"/>
+<wire x1="109.22" y1="66.04" x2="106.68" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="GND8" gate="G$1" pin="GND"/>
+<wire x1="106.68" y1="66.04" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="B2" gate="G$1" pin="GND"/>
+<wire x1="106.68" y1="60.96" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="43.18" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="43.18" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
+<junction x="106.68" y="43.18"/>
+<pinref part="B2" gate="G$1" pin="GND@0"/>
+<wire x1="109.22" y1="60.96" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
+<junction x="106.68" y="60.96"/>
+</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
@@ -1845,6 +1872,10 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="73.66" y1="114.3" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="OP1" gate="B" pin="-IN"/>
+<wire x1="73.66" y1="114.3" x2="73.66" y2="124.46" width="0.1524" layer="91"/>
+<junction x="73.66" y="114.3"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="124.46" x2="83.82" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -1854,6 +1885,13 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <wire x1="104.14" y1="114.3" x2="104.14" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="96.52" x2="101.6" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="OP1" gate="B" pin="OUT"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="124.46" x2="104.14" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="124.46" x2="104.14" y2="114.3" width="0.1524" layer="91"/>
+<junction x="104.14" y="114.3"/>
+<pinref part="B2" gate="G$1" pin="A1"/>
+<wire x1="109.22" y1="96.52" x2="104.14" y2="96.52" width="0.1524" layer="91"/>
+<junction x="104.14" y="96.52"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -1880,6 +1918,11 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <wire x1="63.5" y1="50.8" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="53.34" x2="63.5" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="58.42" x2="63.5" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="B2" gate="G$1" pin="3.3V"/>
+<pinref part="SUPPLY4" gate="G$1" pin="3.3V"/>
+<wire x1="109.22" y1="71.12" x2="106.68" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
