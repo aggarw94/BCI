@@ -1804,14 +1804,6 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <pinref part="GND6" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="SLEEVE"/>
-<wire x1="-2.54" y1="93.98" x2="2.54" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="93.98" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="GND7" gate="G$1" pin="GND"/>
-<wire x1="2.54" y1="81.28" x2="2.54" y2="78.74" width="0.1524" layer="91"/>
-<junction x="2.54" y="81.28"/>
-</segment>
-<segment>
 <pinref part="B2" gate="G$1" pin="GND@2"/>
 <wire x1="109.22" y1="66.04" x2="106.68" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="G$1" pin="GND"/>
@@ -1824,6 +1816,12 @@ Includes pins for  6-pin (2x3) ICSP Header. Compatible with Leonardo boards that
 <pinref part="B2" gate="G$1" pin="GND@0"/>
 <wire x1="109.22" y1="60.96" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
 <junction x="106.68" y="60.96"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="SLEEVE"/>
+<wire x1="-2.54" y1="93.98" x2="2.54" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="GND7" gate="G$1" pin="GND"/>
+<wire x1="2.54" y1="93.98" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
